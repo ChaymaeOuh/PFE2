@@ -41,3 +41,5 @@ function slidefun(n){
     myslide[counter - 1].style.display = "block";
     dot[counter - 1].classList.add('active');
 }
+
+autoslide();

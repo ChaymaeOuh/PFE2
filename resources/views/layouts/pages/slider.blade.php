@@ -2,7 +2,6 @@
 .slider{
     position: relative;
     width: 100%;
-    margin-top: auto;
 }
 .myslider{
     height: auto;
@@ -42,7 +41,7 @@
     margin: 0 10px;
     cursor: pointer;
 }
-.active, .dot:hover{
+.slider .active, .dot:hover{
     background-color: var(--color2);
     border-color:var(--color6);
 }
@@ -73,7 +72,6 @@ img{
 
 </style>
 
-
 <div class="slider">
     <div class="myslider fade" style="display: block;">
         <img src="{{asset('assets/images/slide-1.jpg')}}" style="width:100%;">
@@ -87,8 +85,8 @@ img{
     <div class="myslider fade">
         <img src="{{asset('assets/images/slide-4.jpg')}}" style="width:100%;">
     </div>
-    <a class="prev" onclick="currentSlide(-1)">&#10094;</a>
-    <a class="next" onclick="currentSlide(1)">&#10095;</a>
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
 
     <div class="dotsbox" style="text-align:center;">
         <span class="dot" onclick="currentSlide(1)"></span>
