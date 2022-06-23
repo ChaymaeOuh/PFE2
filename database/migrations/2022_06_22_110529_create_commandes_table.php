@@ -15,8 +15,11 @@ class CreateCommandesTable extends Migration
     {
         Schema::create('commandes', function (Blueprint $table) {
             $table->increments('id_commande')->unique('id_commande_UNIQUE');
+            $table->integer('num_suivi')->nullable();
+
             $table->integer('reference')->nullable();
             $table->date('date_commande')->nullable();
+            $table->integer('etat',)->nullable();
             $table->double('total_TTC')->nullable();
             $table->double('total')->nullable();
             $table->integer('id_cli')->nullable()->index('fk_Commande_Client1_idx');
