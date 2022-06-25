@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+ @extends('layouts.admin')
 
 @section('content')
   <div class="card">
@@ -29,7 +29,7 @@
                       <td>{{ $item->nom_prod}}</td>
                       <td>{{ $item->description_prod }}</td>
                       <td>
-                          <img src="{{ asset('assets/uploads/produits/'.$item->image) }}" class="w-100" alt="Image here" />
+                          <img src="{{ asset('assets/images/'.$item->image) }}" class="w-100" alt="Image here" />
                       </td>
                       <td>{{ $item->prix_prod }}</td>
                       <td>{{ $item->quantite_prod }}</td>
@@ -44,7 +44,7 @@
 
 
           </table>
-          
+
       </div>
   </div>
 

@@ -26,16 +26,17 @@ class ProductController extends Controller
     {
         $produits = new Product();
         if($request->hasFile('image'))
-        { 
+        {
             $file = $request->file('image');
             $ext = $file->getClientoriginalExtension();
             $filename = time().'.'.$ext;
-            $file->move('assets/uploads/produits'.$filename);
+            $file->move('assets/images/'.$filename);
             $produits->image = $filename;
         }
         $produits->id_cat = $request->input('cate_id');
         $produits->nom_prod = $request->input('name');
         $produits->description_prod = $request->input('description');
+        $produits->descriptions_prod = $request->input('descriptions');
         $produits->prix_prod = $request->input('price');
         $produits->quantite_prod = $request->input('quantite');
         $produits->save();
@@ -57,16 +58,16 @@ class ProductController extends Controller
         $path = 'assets/uploads/produits/'.$produits->image;
         if(File::exists($path))
          {
-            File::delete($path); 
-         }  
-         
+            File::delete($path);
+         }
+
             $file = $request->file('image');
             $ext = $file->getClientoriginalExtension();
             $filename = time().'.'.$ext;
             $file->move('assets/uploads/produits'.$filename);
             $produits->image = $filename;
         }
-        
+
         $produits->nom_prod = $request->input('name');
         $produits->description_prod = $request->input('description');
         $produits->prix_prod = $request->input('price');
@@ -81,8 +82,8 @@ class ProductController extends Controller
         $path = 'assets/uploads/produits/'.$produits->image;
         if(File::exists($path))
          {
-            File::delete($path); 
-         }  
+            File::delete($path);
+         }
          $produits->delete();
          return redirect('produits')->with('status',"Produit supprimé avec succès");
 

@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+n @extends('layouts.admin')
 
 @section('content')
   <div class='card'>
@@ -16,8 +16,8 @@
                         <option value="{{ $item->id_cat}}">{{$item->nomCat}}</option>
 
                       @endforeach
-                     
-                      
+
+
                   </select>
                   </div>
                   <div class="col-md-6 mt-3">
@@ -30,12 +30,17 @@
 
                   </div>
                   <div class="col-md-12 mt-3">
+                    <label for="">Plus d'informations</label>
+                    <textarea name="descriptions" rows="3" class="form-control"></textarea>
+
+                </div>
+                  <div class="col-md-12 mt-3">
                       <label for="">Prix</label>
-                      <input type="number" class="form-control" name="price">
+                      <input type="number" step="0.01" class="form-control" name="price">
                   </div>
                   <div class="col-md-12 mt-3">
                       <label for="">Quantité</label>
-                      <input type="number" class="form-control" name="quantite">
+                      <input type="number"  class="form-control" name="quantite">
                   </div>
                   <div class="col-md-12 mt-3 ">
                       <input type="file" name="image" class="form-control" >
@@ -45,7 +50,7 @@
                   </div>
 
               </div>
-              
+
           </form>
 
       </div>

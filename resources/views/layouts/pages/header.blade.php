@@ -1,7 +1,7 @@
 <style>
     .header {
         width: 100vw;
-        height: 17vh;
+        height: 163px;
         position: fixed;
         background-color: var(--color5);
         z-index: 100 ;
@@ -74,11 +74,15 @@
         margin: 0 3px 0 3px;
     }
 
-    .icons a {
+    .icons button {
         cursor: pointer;
+        width: 20%;
+        height: 20%;
+        margin-bottom: 10px ;
+        border: none;
     }
 
-    .icons a:hover {
+    .icons button:hover {
         color: var(--color1);
         background-color: var(--color5);
     }
@@ -255,8 +259,11 @@ li{
 
     .hidder {
         width: 100%;
-        height: 26.8vh;
+        height: 25vh;
     }
+
+
+
 </style>
 
 
@@ -299,10 +306,10 @@ li{
                 </div>
             </form>
             <div class="icons">
-                <a><i class="fa-regular fa-user fa-lg"></i></a>
-                <a><i class="fa-regular fa-heart fa-lg"></i></a>
-                <a><i class="fa-solid fa-cart-shopping fa-lg"></i></a>
-                <a><i class="mode fa-regular fa-moon fa-lg"></i></a>
+                <button><i class="userbtn fa-regular fa-user fa-lg"></i></button>
+                <button><i class="fa-regular fa-heart fa-lg"></i></button>
+                <button><i class="fa-solid fa-cart-shopping fa-lg"></i></button>
+                <button><i class="mode fa-regular fa-moon fa-lg"></i></button>
             </div>
         </div>
     </div>
@@ -339,4 +346,16 @@ li{
         <a href="#">Cartes visites</a>
         <a href="#">Badges</a>
     </span>
+     <span id="usertab" class="usertab">
+        <a href="{{ route('login') }}"><button class="loginbtn">Connexion</button></a>
+        <a href="{{ route('register') }}"><button class="registerbtn">Inscription</button></a>
+    </span>
+    <span id="usertabhome" class="usertabhome">
+        <a ><button class="loginbtnhome">Profil</button></a>
+        <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><button class="logout">Deconnexion</button></a>
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" >
+            @csrf
+        </form>
+    </span>
 </div>
+<div class="hidder"></div>

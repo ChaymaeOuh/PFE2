@@ -116,7 +116,7 @@
         <div class="colomn footerLinks">
             <div class="title">
                 <div id="border">
-                    <h1>SERVICE CLIENT</h1>
+                    <h1>//SERVICE CLIENT</h1>
                 </div>
             </div>
             <ul class="linkset">
@@ -130,7 +130,7 @@
         <div class="colomn footerLinks">
             <div class="title">
                 <div id="border">
-                    <h1>A PROPOS</h1>
+                    <h1>//A PROPOS</h1>
                 </div>
             </div>
             <ul class="linkset">
@@ -142,7 +142,7 @@
         <div class="colomn footerLinks">
             <div class="title">
                 <div id="border">
-                    <h1>GANGNER L'ARGENT</h1>
+                    <h1>//GANGNER L'ARGENT</h1>
                 </div>
             </div>
             <ul class="linkset">
@@ -153,7 +153,7 @@
         </div>
         <div class="colomn contact">
             <div class="titleCont">
-                <h1>CONTACTEZ-NOUS</h1>
+                <h1>//CONTACTEZ-NOUS</h1>
             </div>
             <div class="clinks">
                 <a class="socials" href="#">

@@ -19,10 +19,12 @@ class Product extends Model
         'prix_prod',
         'quantite_prod',
         'image',
+        'descriptions_prod',
+        'public',
         'id_cat',
         'id_admin',
         'id_vendeur',
-        
+
     ];
     public $timestamps = false;
 
