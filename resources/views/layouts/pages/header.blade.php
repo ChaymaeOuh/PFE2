@@ -308,7 +308,7 @@ li{
             <div class="icons">
                 <button><i class="userbtn fa-regular fa-user fa-lg"></i></button>
                 <button><i class="fa-regular fa-heart fa-lg"></i></button>
-                <button><i class="fa-solid fa-cart-shopping fa-lg"></i></button>
+                <a href="{{ url('cart') }}" ><button><i class="fa-solid fa-cart-shopping fa-lg"></i></button></a>
                 <button><i class="mode fa-regular fa-moon fa-lg"></i></button>
             </div>
         </div>
@@ -352,6 +352,9 @@ li{
     </span>
     <span id="usertabhome" class="usertabhome">
         <a ><button class="loginbtnhome">Profil</button></a>
+        <a href="{{ url('my-orders') }}"><button class="loginbtnhome">Mes Commandes</button></a>
+
+        
         <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><button class="logout">Deconnexion</button></a>
         <form id="logout-form" action="{{ route('logout') }}" method="POST" >
             @csrf

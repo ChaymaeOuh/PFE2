@@ -193,7 +193,7 @@
                     <h3>8</h3>
                     <h4>Jun</h4>
                 </div>
-                {{-- <div class="product">
+               <div class="product">
                     <div class="p" (mouseover)="changeImage($event)">
                         <img src="{{ asset('assets/images/image1.jpg') }}" alt="imageproduct"></div>
                     <div class="p" (mouseover)="changeImage($event)">

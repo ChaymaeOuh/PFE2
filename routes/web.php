@@ -5,6 +5,14 @@ use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Frontend\Welcomecontroller;
+use App\Http\Controllers\Frontend\CheckoutController;
+use App\Http\Controllers\Frontend\CartController;
+use App\Http\Controllers\Frontend\MyOrderController;
+
+
+
+
+
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -26,6 +34,23 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/', [Welcomecontroller::class, 'index'])->name('Welcome');
 
 Auth::routes();
+
+Route::post('add-to-cart',[CartController::class, 'addProduct']);
+Route::post('delete-cart-item',[CartController::class, 'deleteproduct']);
+Route::post('update-cart',[CartController::class, 'updatecart']);
+
+Route::middleware(['auth'])->group(function (){
+    Route::get('cart',[CartController::class, 'viewcart']);  
+    Route::get('checkout',[CheckoutController::class, 'index']);
+    Route::post('place-order',[CheckoutController::class, 'placeorder']);
+
+    Route::get('my-orders',[MyOrderController::class, 'index']);
+    Route::get('view-order/{id_commande}',[MyOrderController::class, 'view']);
+
+
+
+
+});
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 

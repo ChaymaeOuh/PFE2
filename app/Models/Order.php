@@ -24,18 +24,21 @@ class Order extends Model
         'frais_livraison',
         'id_type_paiement',
         'id_liv',
-        
+
     ];
     public $timestamps = false;
 
     public function user()
     {
-        return $this->belongsTo(User::class, 'id_cli','id');
+        return $this->belongsTo(User::class, 'id_cli', 'id');
     }
 
-    public function lignecommande()
-    {
-        return $this->hasMany(OrderItem::class);
 
+
+
+    public function orderitems()
+    {
+
+        return $this->hasMany(OrderItem::class);
     }
 }

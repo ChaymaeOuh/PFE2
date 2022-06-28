@@ -13,13 +13,13 @@ class CreateLigneCommandesTable extends Migration
      */
     public function up()
     {
-        Schema::create('ligne_commandes', function (Blueprint $table) {
+        Schema::create('order_items', function (Blueprint $table) {
             $table->increments('id_ligne')->unique('id_ligne_UNIQUE');
             $table->string('nom_prod', 20)->nullable();
-            $table->integer('quantite')->nullable();
-            $table->double('prix')->nullable();
-            $table->integer('id_prod')->nullable()->index('fk_Ligne-Commande_Produits1_idx');
-            $table->integer('id_commande')->nullable()->index('fk_Ligne-Commande_Commande1_idx');
+            $table->integer('quantite');
+            $table->double('prix');
+            $table->string('id_prod')->index('fk_Order_Items_Produits1_idx');
+            $table->string('id_commande')->index('fk_Order_Items_Commandes1_idx');
         });
     }
 
@@ -30,6 +30,6 @@ class CreateLigneCommandesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ligne_commandes');
+        Schema::dropIfExists('order_items');
     }
 }
