@@ -1,7 +1,23 @@
+@extends('layouts.layout')
+@section('title')
+IO STORE
+@endsection
+@section('style')
+<link href="{{ asset('css/style.css') }}" rel="stylesheet">
+
 <style>
+    .category{
+        width: 100%;
+        height: fit-content;
+    }
+    .category_name{
+        color: var(--color1);
+        font-size: 40px;
+        text-align: center;
+    }
     .products {
         transition: all .2s ease-in-out;
-        height: fit-content;
+        height: max-content;
         width: 90%;
         margin-left: 5%;
         display: grid;
@@ -11,26 +27,23 @@
         content: "";
         clear: both;
     }
-
     .product-card{
         margin: 5%;
         border-radius: 3px;
         box-shadow: rgba(0, 0, 0, 0.788);
         height: 65vh;
     }
-
     .product-card:hover .cardbar {
         opacity: 1;
         top: 0;
     }
-
     .card {
         position: relative;
         width: 100%;
         height: 60%;
+
+
     }
-
-
 
     .image img {
         width: 100%;
@@ -131,6 +144,7 @@
         transition: all .3s ease;
         font-weight: 500;
         height: 60%;
+
     }
 
     .description .prix {
@@ -142,6 +156,7 @@
         margin-right: 6px;
         height: 20%;
         display: block;
+
     }
 
     .date {
@@ -173,47 +188,69 @@
         font-size: 14px;
 
     }
+
 </style>
 
 
 
+@endsection
 
-
-<div class="products">
-     @foreach ($featured_products as $prod)
-        <div class="product-card">
-            <a href=" {{url('/'.$category->nomCat.'/'.$prod->nom_prod)}}">
-            <div class="card">
-                <div class="date">
-                    <h3>{{ date('d', strtotime($prod->date))}}</h3>
-                    <h4>{{ date('m', strtotime($prod->date))}}</h4>
-                </div>
-                {{-- <div class="product">
-                    <div class="p" (mouseover)="changeImage($event)">
-                        <img src="{{ asset('assets/images/image1.jpg') }}" alt="imageproduct"></div>
-                    <div class="p" (mouseover)="changeImage($event)">
-                        <img src="{{ asset('assets/images/image1-1.jpg') }}" alt="imageproduct"></div>
-                    <div class="p" (mouseover)="changeImage($event)">
-                        <img src="{{ asset('assets/images/image1-2.jpg') }}" alt="imageproduct"></div>
-                </div> --}}
-                <div class="image">
-                    <img src="{{ asset('assets/images/'.$prod->image) }}" alt="Image">
-                </div>
-                <div class="line"></div>
-                <div class="cardbar">
-                    <ul>
-                        <li><a href="#"><i class="fa-solid fa-cart-shopping fa-lg"></i></a></li>
-                        <li><a href="#"><i class="fa-regular fa-heart fa-lg"></i></a></li>
-                        <li><a href="#"><i class="fa-solid fa-magnifying-glass"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="description">
-                <a href="#">{{ $prod->nom_prod}}</a>
-                <p>{{ $prod->description_prod}}</p>
-                <p><span class="prix">{{$prod->prix_prod}} MAD</span></p>
-            </div>
-        </div>
-     @endforeach
-
+<div>
+@section('header')
+@include('layouts.pages.header')
+<script type="text/javascript" src="{{ asset('js/header.js') }}"></script>
+@endsection
 </div>
+
+<div>
+@section('content')
+<div class="category">
+    <h2 class="category_name">{{ $category->nomCat}}</h2>
+    <div class="products">
+    @foreach ($products as $prod)
+    <div class="product-card">
+        <a href=" {{url('/'.$category->nomCat.'/'.$prod->nom_prod)}}">
+        <div class="card">
+            <div class="date">
+                <h3>{{ date('d', strtotime($prod->date))}}</h3>
+                <h4>{{ date('m', strtotime($prod->date))}}</h4>
+            </div>
+            {{-- <div class="product">
+                <div class="p" (mouseover)="changeImage($event)">
+                    <img src="{{ asset('assets/images/image1.jpg') }}" alt="imageproduct"></div>
+                <div class="p" (mouseover)="changeImage($event)">
+                    <img src="{{ asset('assets/images/image1-1.jpg') }}" alt="imageproduct"></div>
+                <div class="p" (mouseover)="changeImage($event)">
+                    <img src="{{ asset('assets/images/image1-2.jpg') }}" alt="imageproduct"></div>
+            </div> --}}
+            <div class="image">
+                <img src="{{ asset('./imgs/'.$prod->image) }}" alt="Image">
+            </div>
+            <div class="line"></div>
+            <div class="cardbar">
+                <ul>
+                    <li><a href="#"><i class="fa-solid fa-cart-shopping fa-lg"></i></a></li>
+                    <li><a href="#"><i class="fa-regular fa-heart fa-lg"></i></a></li>
+                    <li><a href="#"><i class="fa-solid fa-magnifying-glass"></i></a></li>
+                </ul>
+            </div>
+        </div></a>
+        <div class="description">
+            <a href="#">{{ $prod->nom_prod}}</a>
+            <p>{{ $prod->description_prod}}</p>
+            <p><span class="prix">{{$prod->prix_prod}} MAD</span></p>
+        </div>
+    </div>
+    @endforeach
+    </div>
+</div>
+@endsection
+</div>
+
+
+
+<div>
+    @section('footer')
+    @include('layouts.pages.footer')
+    @endsection
+    </div>

@@ -261,8 +261,9 @@ li{
         width: 100%;
         height: 25vh;
     }
-
-
+    .usertab , .usertabhome{
+        display:none;
+    }
 
 </style>
 
@@ -315,7 +316,7 @@ li{
     </div>
     <div class="botbar">
         <ul class="navlinks">
-            <li><a class="active linktop" href="#">ACCUEIL</a></li>
+            <li><a class="active linktop" href="{{url('/')}}">ACCUEIL</a></li>
             <li><button class="logiciels topbtns">LOGICIELS <i class="a1 fa-solid fa-chevron-right"></i></button>
             </li>
             <li><button class="materiels topbtns">MATERIELS <i class="a2 fa-solid fa-chevron-right"></i></button>
@@ -327,15 +328,15 @@ li{
         <a class="vendre" href="#">VENDRE</a>
     </div>
     <span class="sublinks1">
-        <a href="#">Système d’exploitation</a>
-        <a href="#">Utilitaires bureautiques </a>
+        <a href="{{ url('Systeme d’exploitation')}}">Système d’exploitation</a>
+        <a href="{{ url('Utilitaires bureautiques')}}">Utilitaires bureautiques </a>
         <a href="#">Applications mobile</a>
         <a href="#">Logiciels à télécharger</a>
         <a href="#">Antivirus et sécurité</a>
     </span>
     <span class="sublinks2">
-        <a href="#">PC Portable</a>
-        <a href="#">PC bureau</a>
+        <a href="{{ url('PC Portable')}}">PC Portable</a>
+        <a href="{{ url('PC Bureau')}}">PC bureau</a>
         <a href="#">Composants</a>
         <a href="#">Stockage</a>
         <a href="#">Périphériques</a>

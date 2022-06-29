@@ -13,7 +13,7 @@ class Category extends Model
         'id_cat',
         'nomCat',
         'description',
-        
-        
+
+
     ];
 }

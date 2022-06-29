@@ -25,13 +25,12 @@ class ProductController extends Controller
     public function insert(Request $request)
     {
         $produits = new Product();
-        if($request->hasFile('image'))
+        if($request->has('image'))
         {
-            $file = $request->file('image');
-            $ext = $file->getClientoriginalExtension();
-            $filename = time().'.'.$ext;
-            $file->move('assets/images/'.$filename);
-            $produits->image = $filename;
+            $file = $request->image;
+            $image_name = time().'_'.$file->getClientoriginalName();
+            $file->move(public_path('imgs'), $image_name);
+            $produits->image = $image_name;
         }
         $produits->id_cat = $request->input('cate_id');
         $produits->nom_prod = $request->input('name');
@@ -43,7 +42,7 @@ class ProductController extends Controller
           return redirect('produits')->with('status',"Produit ajouté avec succès");
 
     }
-
+ 
     public function edit($id_prod)
     {
         $produits = Product::find($id_prod);

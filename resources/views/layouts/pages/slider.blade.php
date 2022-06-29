@@ -4,7 +4,7 @@
     width: 100%;
 }
 .myslider{
-    height: auto;
+    height: 70vh;
     display: none;
     overflow: hidden;
 }
@@ -74,7 +74,7 @@ img{
 
 <div class="slider">
     <div class="myslider fade" style="display: block;">
-        <img src="{{asset('assets/images/slide-1.jpg')}}" style="width:100%;">
+        <img  src="{{asset('assets/images/slide-1.jpg')}}" style="width:100%;" href="{{ url('PC Portable')}}">
     </div>
     <div class="myslider fade">
         <img src="{{asset('assets/images/slide-2.jpg')}}" style="width:100%;">

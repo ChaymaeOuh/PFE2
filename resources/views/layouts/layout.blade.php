@@ -54,12 +54,9 @@
 
     </div>
 
+    
     <div>
-        @yield('slider')
-    </div>
-
-    <div>
-        @yield('product')
+        @yield('content')
     </div>
 
     <div>

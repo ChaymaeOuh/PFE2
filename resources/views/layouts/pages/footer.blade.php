@@ -37,7 +37,7 @@
 
 #border{
     border-bottom: 3px solid var(--color3);
-    width: 65%;
+    width: 75%;
 }
 
 .titleCont{

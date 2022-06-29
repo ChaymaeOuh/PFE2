@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Frontend\CategoryController;
 use App\Http\Controllers\Frontend\Welcomecontroller;
 use Illuminate\Support\Facades\Auth;
 
@@ -52,10 +53,11 @@ Route::middleware(['auth','isAdmin'])->group (function () {
     Route::get('view-user/{id}',[UserController::class,'viewuser']);
     Route::get('supprimer-client/{id}',[UserController::class,'destroy']);
 
-
-
-
  });
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/{nomCat}',[Welcomecontroller::class, 'category']);
+Route::get('/{nomCat}/{nom_prod}',[Welcomecontroller::class, 'productdetails']);
+

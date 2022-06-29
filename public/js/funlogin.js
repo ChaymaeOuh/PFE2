@@ -7,3 +7,4 @@ const hello = () => {
         signup.classList.toggle("show");
     });
 };
+hello();

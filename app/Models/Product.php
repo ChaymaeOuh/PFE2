@@ -24,7 +24,7 @@ class Product extends Model
         'id_cat',
         'id_admin',
         'id_vendeur',
-
+        'date',
     ];
     public $timestamps = false;
 

@@ -29,7 +29,7 @@
                       <td>{{ $item->nom_prod}}</td>
                       <td>{{ $item->description_prod }}</td>
                       <td>
-                          <img src="{{ asset('assets/images/'.$item->image) }}" class="w-100" alt="Image here" />
+                          <img src="{{ asset('./imgs/'.$item->image) }}" class="w-100" alt="Image here" />
                       </td>
                       <td>{{ $item->prix_prod }}</td>
                       <td>{{ $item->quantite_prod }}</td>
