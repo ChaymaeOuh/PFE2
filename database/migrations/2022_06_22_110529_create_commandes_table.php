@@ -14,15 +14,14 @@ class CreateCommandesTable extends Migration
     public function up()
     {
         Schema::create('commandes', function (Blueprint $table) {
-            $table->increments('id_commande')->unique('id_commande_UNIQUE');
-            $table->integer('num_suivi')->nullable();
-
+            $table->string('id_commande')->unique('id_commande_UNIQUE');
+            $table->string('num_suivi')->nullable();
             $table->integer('reference')->nullable();
             $table->date('date_commande')->nullable();
-            $table->integer('etat',)->nullable();
+            $table->integer('etat',)->default('0');
             $table->double('total_TTC')->nullable();
             $table->double('total')->nullable();
-            $table->integer('id_cli')->nullable()->index('fk_Commande_Client1_idx');
+            $table->integer('id_cli')->nullable()->index('fk_Commandes_Users1_idx');
             $table->double('frais_livraison')->nullable();
             $table->integer('id_type_paiement')->nullable()->index('fk_Commande_Type-paiement1_idx');
             $table->integer('id_liv')->nullable()->index('fk_Commande_Livraison1_idx');

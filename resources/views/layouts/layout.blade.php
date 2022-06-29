@@ -58,6 +58,10 @@
     <div>
         @yield('content')
     </div>
+    <div>
+        @yield('content')
+    </div>
+
 
     <div>
         @yield('footer')

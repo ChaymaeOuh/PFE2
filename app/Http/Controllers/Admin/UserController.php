@@ -31,4 +31,8 @@ class UserController extends Controller
          return redirect('users')->with('status',"Client supprimé avec succès");
 
     }
+
+    
+
+
 }

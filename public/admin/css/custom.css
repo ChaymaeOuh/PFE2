@@ -21,3 +21,13 @@
     -moz-appearance:none;
     appearance:none;
 }
+.checkout-form label{
+    font-size: 12px ;
+    font-weight:700 ;
+   
+}
+.checkout-form input{
+    font-size: 14px ;
+    padding: 5px ;
+    font-weight: 400 ;
+}
