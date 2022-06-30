@@ -152,7 +152,7 @@
         @else
         <div class="vide">
             <h2>Votre <i class="fa fa-shopping-cart"></i> panier est vide</h2>
-            <button>Continer Vos Achats </button>
+            <a href="{{ url('/home')}}"><button>Continer Vos Achats </button></a>
         </div>
        @endif
         

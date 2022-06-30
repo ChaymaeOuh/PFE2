@@ -29,7 +29,7 @@
             <script>
               document.write(new Date().getFullYear())
             </script>, fabriqué avec <i class="material-icons">favorite</i> by
-            <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a> pour un meilleur web
+            <a href="{{ url('/')}}" target="_blank">IO Store</a> pour un meilleur web
 .
           </div>
         </div>
