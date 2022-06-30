@@ -22,11 +22,11 @@
                        </div>
                        <div class=" col-md-4 mt-3">
                            <label for="">Nom</label>
-                           <div class="p-2 border">{{$users->nomCli}}</div>
+                           <div class="p-2 border">{{$users->name}}</div>
                        </div>
                        <div class="col-md-4 mt-3">
                            <label for="">Prénom</label>
-                           <div class="p-2 border">{{$users->prenomCli}}</div>
+                           <div class="p-2 border">{{$users->prenom}}</div>
                        </div>
                        <div class="col-md-4 mt-3">
                            <label for="">E-mail</label>

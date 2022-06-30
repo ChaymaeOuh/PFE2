@@ -24,7 +24,7 @@
                   @foreach($users as $item)
                   <tr>
                       <td>{{ $item->id }}</td>
-                      <td>{{ $item->nomCli.' '.$item->prenomCli }}</td>
+                      <td>{{ $item->name.' '.$item->prenom }}</td>
                       
                       <td>{{ $item->email }}</td>
                     
