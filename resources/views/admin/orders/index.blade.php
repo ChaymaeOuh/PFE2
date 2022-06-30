@@ -32,7 +32,7 @@
                     <tr>
                         <td>{{ date('d-m-Y', strtotime($item->date_commande)) }}</td>
                         <td>{{ $item->num_suivi}}</td>
-                        <td>{{ $item->total_TTC}}</td>
+                        <td>{{ $item->total}}</td>
                         <td>{{ $item->etat == '0'?'En Attendant' : 'Complété'}}</td>
                         <td>
                             <a href="{{ url('admin/view-order/'.$item->id_commande) }}" class="btn btn-primary">Voir</a>

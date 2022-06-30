@@ -49,7 +49,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($commande->lignecommande as $item)
+                    @foreach($commande->orderitems as $item)
                     <tr>
                         <td>{{ $item->produits->nom_prod}}</td>
                         <td>{{ $item->quantite}}</td>

@@ -189,7 +189,7 @@
                     <h3>{{ date('d', strtotime($prod->date))}}</h3>
                     <h4>{{ date('m', strtotime($prod->date))}}</h4>
                 </div>
-                {{-- <div class="product">
+               <div class="product">
                     <div class="p" (mouseover)="changeImage($event)">
                         <img src="{{ asset('assets/images/image1.jpg') }}" alt="imageproduct"></div>
                     <div class="p" (mouseover)="changeImage($event)">
