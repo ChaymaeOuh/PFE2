@@ -261,10 +261,6 @@ li{
         width: 100%;
         height: 25vh;
     }
-    .usertab , .usertabhome{
-        display:none;
-    }
-
 </style>
 
 
@@ -347,16 +343,7 @@ li{
         <a href="#">Cartes visites</a>
         <a href="#">Badges</a>
     </span>
-     <span id="usertab" class="usertab">
-        <a href="{{ route('login') }}"><button class="loginbtn">Connexion</button></a>
-        <a href="{{ route('register') }}"><button class="registerbtn">Inscription</button></a>
-    </span>
-    <span id="usertabhome" class="usertabhome">
-        <a ><button class="loginbtnhome">Profil</button></a>
-        <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><button class="logout">Deconnexion</button></a>
-        <form id="logout-form" action="{{ route('logout') }}" method="POST" >
-            @csrf
-        </form>
-    </span>
+
+
 </div>
 <div class="hidder"></div>

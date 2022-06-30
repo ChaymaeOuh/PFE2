@@ -182,7 +182,8 @@
 <div class="products">
      @foreach ($featured_products as $prod)
         <div class="product-card">
-            <a href=" {{url('/'.$category->nomCat.'/'.$prod->nom_prod)}}">
+
+            <a href=" {{url('/Category/'.$prod->nom_prod)}}">
             <div class="card">
                 <div class="date">
                     <h3>{{ date('d', strtotime($prod->date))}}</h3>
@@ -197,7 +198,7 @@
                         <img src="{{ asset('assets/images/image1-2.jpg') }}" alt="imageproduct"></div>
                 </div> --}}
                 <div class="image">
-                    <img src="{{ asset('assets/images/'.$prod->image) }}" alt="Image">
+                    <img src="{{ asset('./imgs/'.$prod->image) }}" alt="Image">
                 </div>
                 <div class="line"></div>
                 <div class="cardbar">

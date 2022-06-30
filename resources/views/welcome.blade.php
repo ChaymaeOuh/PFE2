@@ -42,10 +42,7 @@
             text-decoration: none;
         }
         .show {
-         clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
-        }
-        .usertabhome{
-            display: none;
+         display: block;
         }
     </style>
 @endsection
@@ -53,13 +50,33 @@
 <div>
     @section('header')
         @include('layouts.pages.header')
+<div>
+    <span id="usertab" class="usertab">
+        <a href="{{ route('login') }}"><button class="loginbtn">Connexion</button></a>
+        <a href="{{ route('register') }}"><button class="registerbtn">Inscription</button></a>
+    </span>
+</div>
+<script>
+
+const hello = () => {
+    const button1 = document.querySelector(".userbtn");
+    const signup = document.querySelector(".usertab");
+
+    button1.addEventListener("click", () => {
+        //animation
+        signup.classList.toggle("show");
+    });
+}
+
+hello();
+</script>
+
         <script type="text/javascript" src="{{ asset('js/header.js') }}"></script>
 
-        <script type="text/javascript" src="{{ asset('js/funlogin.js') }}"></script>
     @endsection
 
 
-    
+
     @section('content')
         @include('layouts.pages.slider')
         <script type="text/javascript" src="{{ asset('js/slider.js') }}"></script>

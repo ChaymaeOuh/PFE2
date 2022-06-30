@@ -32,7 +32,7 @@ IO STORE
 
 <style>
     .usertabhome {
-        /* display: none; */
+        display: none;
         position: absolute;
         width: 200px;
         overflow: auto;
@@ -43,7 +43,7 @@ IO STORE
         left: 80%;
         border-radius: 20px;
         background-color: var(--color5);
-        /* clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%); */
+        clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
         transform-origin: top right;
         transition: all .4s ease-in-out;
     }
@@ -68,10 +68,7 @@ IO STORE
         text-decoration: none;
     }
     .show {
-        /* clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%); */
-    }
-    .usertab{
-        display: none;
+        display: block;
     }
 </style>
 
@@ -80,14 +77,35 @@ IO STORE
 <div>
 @section('header')
 @include('layouts.pages.header')
-<script type="text/javascript" src="{{ asset('js/header.js') }}"></script>
+
+<span id="usertabhome" class="usertabhome">
+    <a ><button class="loginbtnhome">Profil</button></a>
+    <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><button class="logout">Deconnexion</button></a>
+    <form id="logout-form" action="{{ route('logout') }}" method="POST" >
+        @csrf
+    </form>
+</span>
+
+
+        <script type="text/javascript" src="{{ asset('js/header.js') }}"></script>
+
+        <script type="text/javascript" src="{{ asset('js/funlogin.js') }}"></script>
 @endsection
 </div>
 
 <div>
-    @section('slider')
-    @include('layouts.pages.slider')
-    <script type="text/javascript" src="{{ asset('js/slider.js') }}"></script>
+    @section('content')
+        @include('layouts.pages.slider')
+        <script type="text/javascript" src="{{ asset('js/slider.js') }}"></script>
+        @include('layouts.pages.product-card')
+    @endsection
+</div>
+
+
+
+<div>
+    @section('footer')
+        @include('layouts.pages.footer')
     @endsection
 </div>
 

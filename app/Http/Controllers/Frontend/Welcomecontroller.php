@@ -46,4 +46,14 @@ class Welcomecontroller extends Controller
         }
     }
 
+    public function detailsProduct($nom_prod){
+         if(Product::where('nom_prod', $nom_prod)->exists()){
+             $products = Product::where('nom_prod', $nom_prod)->first();
+             $category = Category::where('id_cat',$products->id_cat)->first();
+             return view('Product', compact('category','products'));
+         }
+         else{
+             return redirect('/')->with('status','Produit introuvable');
+         }
+     }
 }

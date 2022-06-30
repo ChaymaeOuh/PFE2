@@ -60,4 +60,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('/{nomCat}',[Welcomecontroller::class, 'category']);
 Route::get('/{nomCat}/{nom_prod}',[Welcomecontroller::class, 'productdetails']);
+Route::get('/Category/{nom_prod}',[Welcomecontroller::class, 'detailsProduct']);
 
