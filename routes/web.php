@@ -9,11 +9,7 @@ use App\Http\Controllers\Frontend\Welcomecontroller;
 use App\Http\Controllers\Frontend\CheckoutController;
 use App\Http\Controllers\Frontend\CartController;
 use App\Http\Controllers\Frontend\MyOrderController;
-
-
-
-
-
+use App\Http\Controllers\VendeurController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -41,13 +37,15 @@ Route::post('delete-cart-item',[CartController::class, 'deleteproduct']);
 Route::post('update-cart',[CartController::class, 'updatecart']);
 
 Route::middleware(['auth'])->group(function (){
-    Route::get('cart',[CartController::class, 'viewcart']);  
+    Route::get('cart',[CartController::class, 'viewcart']);
     Route::get('checkout',[CheckoutController::class, 'index']);
     Route::post('place-order',[CheckoutController::class, 'placeorder']);
 
     Route::get('my-orders',[MyOrderController::class, 'index']);
     Route::get('view-order/{id_commande}',[MyOrderController::class, 'view']);
 
+    Route::get('Vendeur', [VendeurController::class, 'index']);
+    Route::get('dashbordVendeur', [VendeurController::class, 'etrevendeur']);
 
 
 
@@ -86,4 +84,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/{nomCat}',[Welcomecontroller::class, 'category']);
 Route::get('/{nomCat}/{nom_prod}',[Welcomecontroller::class, 'productdetails']);
 Route::get('/Category/{nom_prod}',[Welcomecontroller::class, 'detailsProduct']);
+Route::get('/Wishlist',[CategoryController::class, 'index']);
+
 

@@ -15,7 +15,7 @@ class CartController extends Controller
     {
         $product_id = $request->input('product_id');
         $product_qty = $request->input('product_qty');
-
+        
         if(Auth::check())
         {
             $prod_check = Product::where('id_prod',$product_id)->firstOrFail();
@@ -36,7 +36,7 @@ class CartController extends Controller
                 $cartItem->save();
                 return response()->json(['status' => $prod_check->name."Ajoute au panier"]);
                 }
-         
+
             }
         }
         else
@@ -45,13 +45,13 @@ class CartController extends Controller
         }
 
     }
-    
+
     public function viewcart()
     {
         $cartitems = Cart::where('user_id', Auth::id())->get();
         return view('frontend.cart', compact('cartitems'));
     }
-    
+
     public function deleteproduct(Request $request)
     {
         if(Auth::check())
@@ -87,6 +87,6 @@ class CartController extends Controller
             }
 
         }
-  
+
     }
 }

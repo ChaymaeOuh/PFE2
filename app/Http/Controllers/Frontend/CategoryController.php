@@ -9,10 +9,10 @@ use Illuminate\Http\Request;
 
 class CategoryController extends Controller
  {
-    //  public function index()
-    //  {
-    //     return view('Category');
-    //  }
+      public function index()
+      {
+         return view('Wishlist');
+      }
 
 //      public function category($nomCat)
 //     {

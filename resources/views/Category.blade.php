@@ -9,11 +9,14 @@ IO STORE
     .category{
         width: 100%;
         height: fit-content;
+        margin-top: 50px;
+        margin-bottom: 50px;
     }
     .category_name{
         color: var(--color1);
         font-size: 40px;
         text-align: center;
+        margin-bottom: 30px;
     }
     .products {
         transition: all .2s ease-in-out;

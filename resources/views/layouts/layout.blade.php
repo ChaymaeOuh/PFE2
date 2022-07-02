@@ -9,13 +9,6 @@
     <title>@yield('title')</title>
     @yield('style')
 </head>
-{{-- <script>
-
-    const userbtn = () => {
-    	const button1 = document.querySelector(".");
-    }
-
-</script> --}}
 
 <body>
 
@@ -54,14 +47,13 @@
 
     </div>
 
-    
-    <div>
-        @yield('content')
-    </div>
     <div>
         @yield('content')
     </div>
 
+    <div>
+        @yield('scripts')
+    </div>
 
     <div>
         @yield('footer')

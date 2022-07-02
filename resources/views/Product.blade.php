@@ -65,12 +65,35 @@
 <div>
     @section('content')
         @include('layouts.pages.productdetails')
+
+
+
+
     @endsection
 </div>
 
+<div>
+    @section('scripts')
 
 
 
+    <script>
+        $(document).ready(fuction() {
+            $('cart').click(function (e){
+                e.preventDefault();
+
+                var product_id = $(this).closest('.product_card').find('.prod_id').val();
+                var product_qty = $(this).closest('.product_card').find('.qte').val();
+
+                alert(prod_id);
+                alert(qte);
+            })
+        })
+        </script>
+
+
+    @endsection
+</div>
 
 <div>
     @section('footer')

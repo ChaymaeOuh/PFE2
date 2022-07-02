@@ -13,6 +13,7 @@
                 <tbody>
                     @foreach($orders as $item)
                     <tr>
+                        <td>{{ date('d-m-Y', strtotime($item->date_commande)) }}</td>
                         <td>{{ $item->num_suivi }}</td>
                         <td>{{ $item->total }}</td>
                         <td>{{ $item->etat == '0' ? 'En Attendant' : 'Complete' }}</td>

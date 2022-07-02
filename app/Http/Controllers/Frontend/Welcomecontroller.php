@@ -33,9 +33,8 @@ class Welcomecontroller extends Controller
         if(Category::where('nomCat', $nomCat)->exists()){
             if(Product::where('nom_prod', $nom_prod)->exists()){
                 $category = Category::where('nomCat',$nomCat)->first();
-                $featured_products = Product::where('public', '1')->take(12)->get();
                 $products = Product::where('nom_prod', $nom_prod)->first();
-                return view('Product', compact('category','products','featured_products'));
+                return view('Product', compact('category','products'));
             }
             else{
                 return redirect('/')->with('status','Produit introuvable');
@@ -47,13 +46,14 @@ class Welcomecontroller extends Controller
     }
 
     public function detailsProduct($nom_prod){
-         if(Product::where('nom_prod', $nom_prod)->exists()){
              $products = Product::where('nom_prod', $nom_prod)->first();
              $category = Category::where('id_cat',$products->id_cat)->first();
              return view('Product', compact('category','products'));
-         }
-         else{
-             return redirect('/')->with('status','Produit introuvable');
-         }
+
      }
+
+     public function wish(){
+        return view('/Wishlist');
+     }
+
 }

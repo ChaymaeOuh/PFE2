@@ -4,6 +4,8 @@
         height: fit-content;
         width: 90%;
         margin-left: 5%;
+        margin-top: 50px;
+        margin-bottom: 50px;
         display: grid;
         grid-template-columns:auto auto auto auto;
     }
@@ -183,20 +185,20 @@
      @foreach ($featured_products as $prod)
         <div class="product-card">
 
-            <a href=" {{url('/Category/'.$prod->nom_prod)}}">
+            <a href=" {{url('Category/'.$prod->nom_prod)}}">
             <div class="card">
                 <div class="date">
                     <h3>{{ date('d', strtotime($prod->date))}}</h3>
                     <h4>{{ date('m', strtotime($prod->date))}}</h4>
                 </div>
-               <div class="product">
+               {{-- <div class="product">
                     <div class="p" (mouseover)="changeImage($event)">
                         <img src="{{ asset('assets/images/image1.jpg') }}" alt="imageproduct"></div>
                     <div class="p" (mouseover)="changeImage($event)">
                         <img src="{{ asset('assets/images/image1-1.jpg') }}" alt="imageproduct"></div>
                     <div class="p" (mouseover)="changeImage($event)">
                         <img src="{{ asset('assets/images/image1-2.jpg') }}" alt="imageproduct"></div>
-                </div> --}}
+                </div>  --}}
                 <div class="image">
                     <img src="{{ asset('./imgs/'.$prod->image) }}" alt="Image">
                 </div>
@@ -204,13 +206,13 @@
                 <div class="cardbar">
                     <ul>
                         <li><a href="#"><i class="fa-solid fa-cart-shopping fa-lg"></i></a></li>
-                        <li><a href="#"><i class="fa-regular fa-heart fa-lg"></i></a></li>
-                        <li><a href="#"><i class="fa-solid fa-magnifying-glass"></i></a></li>
+                        <li><a href="{{ url('/wishlist') }}"><i class="fa-regular fa-heart fa-lg"></i></a></li>
+                        <li><a href=" {{url('Category/'.$prod->nom_prod)}}"><i class="fa-solid fa-magnifying-glass"></i></a></li>
                     </ul>
                 </div>
             </div>
             <div class="description">
-                <a href="#">{{ $prod->nom_prod}}</a>
+                <a href=" {{url('Category/'.$prod->nom_prod)}}">{{ $prod->nom_prod}}</a>
                 <p>{{ $prod->description_prod}}</p>
                 <p><span class="prix">{{$prod->prix_prod}} MAD</span></p>
             </div>

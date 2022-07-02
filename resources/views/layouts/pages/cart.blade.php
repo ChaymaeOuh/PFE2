@@ -76,14 +76,14 @@
     cursor: pointer;
    }
 .check:hover {
-  background-color:  #006400; 
+  background-color:  #006400;
   color: white;
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 .vide h2{
     text-align: center;
     font-weight: 200;
-    font-size: 38px; 
+    font-size: 38px;
 }
 .vide button{
     background-color:white ;
@@ -97,16 +97,16 @@
     transition-duration: 0.4s;
     cursor: pointer;
     float: right;
-    
+
    }
 .vide button:hover {
-  background-color:  blue; 
+  background-color:  blue;
   color: white;
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
-   
-    
-    
+
+
+
 </style>
 
 
@@ -121,25 +121,25 @@
             <th>Quantite</th>
             <th></th>
         </tr>
-      
+
         @php $totals = 0; @endphp
         @foreach($cartitems as $item)
         <tr class="product_data">
-            
+
             <td>
                 <div class="cart-info">
-                    <img src="{{ asset('assets/images/'.$item->products->image) }}" height="70px" width="70px"> 
+                    <img src="{{ asset('./imgs/'.$item->products->image) }}" height="70px" width="70px">
                     <div>
-                        <p>{{ $item->products->nom_prod }}</p>                          
-                    </div>               
+                        <p>{{ $item->products->nom_prod }}</p>
+                    </div>
                 </div>
             </td>
-            
+
             <td><input type="hidden" class="prod_id" value="{{$item->prod_id}}" ></td>
             <td>{{ $item->products->prix_prod}}</td>
             <td><input type="number" value=" {{$item->prod_qty}} " class=" qty-input">{{$item->prod_qty}} </td>
             <td><i class="fa fa-trash-o delete-cart-item " style='font-size:24px'></i></td>
-           
+
         </tr>
         @php $totals += $item->products->prix_prod * $item->prod_qty ; @endphp
         @endforeach
@@ -155,8 +155,8 @@
             <button>Continer Vos Achats </button>
         </div>
        @endif
-        
+
 </table>
 
-  
+
 </div>

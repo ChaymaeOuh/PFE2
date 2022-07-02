@@ -303,8 +303,8 @@ li{
                 </div>
             </form>
             <div class="icons">
-                <button><i class="userbtn fa-regular fa-user fa-lg"></i></button>
-                <button><i class="fa-regular fa-heart fa-lg"></i></button>
+                <button id="userbtn" onclick="userfunc()"><i class="userbtn fa-regular fa-user fa-lg"></i></button>
+                <a href="{{ url('/Wishlist') }}"><button><i class="fa-regular fa-heart fa-lg"></i></button></a>
                 <a href="{{ url('cart') }}" ><button><i class="fa-solid fa-cart-shopping fa-lg"></i></button></a>
                 <button><i class="mode fa-regular fa-moon fa-lg"></i></button>
             </div>
@@ -321,7 +321,7 @@ li{
             </li>
             <li><a class="linktop" href="#footer">CONTACT</a></li>
         </ul>
-        <a class="vendre" href="#">VENDRE</a>
+        <a class="vendre" href="{{url('Vendeur')}}">VENDRE</a>
     </div>
     <span class="sublinks1">
         <a href="{{ url('Systeme d’exploitation')}}">Système d’exploitation</a>
@@ -343,24 +343,6 @@ li{
         <a href="#">Cartes visites</a>
         <a href="#">Badges</a>
     </span>
-<<<<<<< HEAD
 
-
-=======
-     <span id="usertab" class="usertab">
-        <a href="{{ route('login') }}"><button class="loginbtn">Connexion</button></a>
-        <a href="{{ route('register') }}"><button class="registerbtn">Inscription</button></a>
-    </span>
-    <span id="usertabhome" class="usertabhome">
-        <a ><button class="loginbtnhome">Profil</button></a>
-        <a href="{{ url('my-orders') }}"><button class="loginbtnhome">Mes Commandes</button></a>
-
-        
-        <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><button class="logout">Deconnexion</button></a>
-        <form id="logout-form" action="{{ route('logout') }}" method="POST" >
-            @csrf
-        </form>
-    </span>
->>>>>>> 9a7938dbfbdf1d91039871246c248dc2d6eae6ec
 </div>
 <div class="hidder"></div>

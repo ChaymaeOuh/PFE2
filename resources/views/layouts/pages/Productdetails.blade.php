@@ -128,6 +128,7 @@
                 @endif
                 <div class="last">
                     <div class="quantite">
+                        <input type="hidden" value="{{$products->id_prod}}" class="prod_id">
                         <label>Quantité</label>
                         <input type="number" name="qte" value="1" class="qte" />
                     </div>
@@ -138,3 +139,5 @@
         </div>
     </div>
 </div>
+
+
