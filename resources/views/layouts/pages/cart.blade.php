@@ -128,7 +128,7 @@
             
             <td>
                 <div class="cart-info">
-                    <img src="{{ asset('assets/images/'.$item->products->image) }}" height="70px" width="70px"> 
+                    <img src="{{ asset('./imgs/'.$item->products->image) }}" height="70px" width="70px"> 
                     <div>
                         <p>{{ $item->products->nom_prod }}</p>                          
                     </div>               
@@ -137,7 +137,7 @@
             
             <td><input type="hidden" class="prod_id" value="{{$item->prod_id}}" ></td>
             <td>{{ $item->products->prix_prod}}</td>
-            <td><input type="number" value=" {{$item->prod_qty}} " class=" qty-input">{{$item->prod_qty}} </td>
+            <td><input type="number" value=" {{$item->prod_qty}} " class=" qty-input"> </td>
             <td><i class="fa fa-trash-o delete-cart-item " style='font-size:24px'></i></td>
            
         </tr>
